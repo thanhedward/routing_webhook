@@ -1,6 +1,6 @@
 # Asyncio Webframe
-fastapi==0.101.0
-uvicorn==0.23.2
+fastapi>=0.103.1
+uvicorn>=0.23.2
 
 # Asyncio Http Requests
-httpx==0.25.0
+httpx>=0.25.0
