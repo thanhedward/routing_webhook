@@ -1,0 +1,1 @@
+META_VERIFY_TOKEN = "bet88.com"
