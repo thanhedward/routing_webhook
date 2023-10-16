@@ -4,3 +4,7 @@ from fastapi import BackgroundTasks, FastAPI, Request, Response, HTTPException, 
 app = FastAPI()
 
 # Setup a client to send requests
+@app.get("/test")
+async def root():
+    print("test hosting")
+    return {"message": "Hello World Test"}
