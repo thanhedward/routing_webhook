@@ -3,4 +3,4 @@ fastapi>=0.103.1
 uvicorn>=0.20.0
 
 # Asyncio Http Requests
-httpx>=0.25.0
+httpx>=0.24.0
