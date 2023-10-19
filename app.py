@@ -2,6 +2,7 @@ import fastapi, traceback
 from fastapi import BackgroundTasks, FastAPI, Request, Response, HTTPException, Query
 from config import *
 import sqlite3, httpx
+import validators
 app = FastAPI()
 
 client = httpx.AsyncClient()
@@ -32,6 +33,7 @@ async def index(request: Request):
     # Handling error:
     try:
         output = await request.json()
+        print(output)
         page_id = ""
         for event in output['entry']:
             # Please read documentation of Facebook Messenger API to understand this part
@@ -46,7 +48,8 @@ async def index(request: Request):
                         pass
         try:
             url = cursor.execute("SELECT url FROM callback WHERE page_id = ?", (page_id,)).fetchone()[0]
-            await client.post(url, json=output)
+            response = await client.post(url, json=output)
+            print(response.content)
             return Response(status_code=200, content="EVENT_RECEIVED")
         except Exception as e:
             with open('errlog.txt', 'a') as f:
@@ -89,9 +92,9 @@ async def update(request: Request):
         url = query_params.get("url")
         # Remove beginning and ending spaces
         url = url.strip()
-        # Check if url is ssl or not
-        if not url.startswith('https://'):
-            raise Exception("A secure callback URL (https) is required.")
+        # Check if url is valid or not
+        if not validators.url(url):
+            raise Exception("A valid URL must be provided.")
         if not page_id or not url:
             raise Exception("Missing page_id or url")
         if not cursor.execute("SELECT * FROM callback WHERE page_id = ?", (page_id,)).fetchone():

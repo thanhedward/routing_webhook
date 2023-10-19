@@ -1,54 +1,14 @@
 'NoneType' object is not subscriptable
 Traceback (most recent call last):
-  File "/home/jaibtdou/routing_webhook/app.py", line 49, in index
+  File "/home/thanhtd/routing_webhook/app.py", line 50, in index
     url = cursor.execute("SELECT url FROM callback WHERE page_id = ?", (page_id,)).fetchone()[0]
 TypeError: 'NoneType' object is not subscriptable
 
 
 
-
-Traceback (most recent call last):
-  File "/home/jaibtdou/routing_webhook/app.py", line 93, in update
-    raise Exception
-Exception
-
-
-
-
-Traceback (most recent call last):
-  File "/home/jaibtdou/routing_webhook/app.py", line 93, in update
-    raise Exception
-Exception
-
-
-
-A secure callback URL (https) is required.
-Traceback (most recent call last):
-  File "/home/jaibtdou/routing_webhook/app.py", line 93, in update
-    raise Exception("A secure callback URL (https) is required.")
-Exception: A secure callback URL (https) is required.
-
-
-
-A secure callback URL (https) is required.
-Traceback (most recent call last):
-  File "/home/jaibtdou/routing_webhook/app.py", line 93, in update
-    raise Exception("A secure callback URL (https) is required.")
-Exception: A secure callback URL (https) is required.
-
-
-
-A secure callback URL (https) is required.
-Traceback (most recent call last):
-  File "/home/jaibtdou/routing_webhook/app.py", line 93, in update
-    raise Exception("A secure callback URL (https) is required.")
-Exception: A secure callback URL (https) is required.
-
-
-
 'NoneType' object is not subscriptable
 Traceback (most recent call last):
-  File "/home/jaibtdou/routing_webhook/app.py", line 74, in get
+  File "/home/thanhtd/routing_webhook/app.py", line 50, in index
     url = cursor.execute("SELECT url FROM callback WHERE page_id = ?", (page_id,)).fetchone()[0]
 TypeError: 'NoneType' object is not subscriptable
 

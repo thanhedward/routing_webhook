@@ -1,7 +1,8 @@
 # Sqlite3 Database
 # Asyncio Webframe
-fastapi>=0.103.1
-uvicorn>=0.20.0
+fastapi
+uvicorn
 
 # Asyncio Http Requests
-httpx>=0.24.0
+httpx
+validators
